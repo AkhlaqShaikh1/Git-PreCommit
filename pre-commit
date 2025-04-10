@@ -1,0 +1,2 @@
+#!/bin/sh
+python "C:/my-git-hooks/check_logs.py"
