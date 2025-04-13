@@ -5,17 +5,16 @@ import argparse
 import logging
 from pathlib import Path
 
-# ✅ Logger setup
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 log = logging.getLogger(__name__)
 
-# 🔒 These are the protected paths — any changes here will block the commit.
+
 PROTECTED_PATHS = [
     'src/config/',
     'src/env/',
 ]
 
-# 🚫 Patterns to detect bad logging (generic across languages)
+
 LOG_PATTERNS = [
     r'^\+.*console\.log',
     r'^\+.*\bprint\s*\(',
@@ -24,7 +23,7 @@ LOG_PATTERNS = [
     r'^\+.*(?<!logger\.)\blog\s*\('
 ]
 
-# 🧹 Corresponding patterns to auto-remove from source code
+
 FIX_PATTERNS = [
     r'^\s*console\.log.*',
     r'^\s*print\s*\(.*',
