@@ -124,7 +124,6 @@ if __name__ == "__main__":
         log.info("📦 No staged files to check.")
         sys.exit(0)
 
-    # Block commit if protected paths were touched
     block_if_protected(staged_files)
 
     if args.fix:
